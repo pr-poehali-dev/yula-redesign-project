@@ -504,14 +504,26 @@ export default function Index() {
         </div>
       </footer>
 
-      {/* Floating Callback Button */}
-      <button
-        onClick={() => setCallbackOpen(!callbackOpen)}
-        className="fixed bottom-8 right-8 z-50 bg-primary hover:bg-primary/90 text-white rounded-full p-4 shadow-2xl transition-all duration-300 hover:scale-110 flex items-center gap-2"
-      >
-        <Icon name="Phone" size={24} />
-        <span className="font-semibold">Обратный звонок</span>
-      </button>
+      {/* Floating Action Buttons */}
+      <div className="fixed bottom-8 right-8 z-50 flex flex-col gap-4">
+        <a
+          href="https://t.me/ulaa_ru"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-[#0088cc] hover:bg-[#0088cc]/90 text-white rounded-full p-4 shadow-2xl transition-all duration-300 hover:scale-110 flex items-center gap-2"
+        >
+          <Icon name="Send" size={24} />
+          <span className="font-semibold">Telegram</span>
+        </a>
+        
+        <button
+          onClick={() => setCallbackOpen(!callbackOpen)}
+          className="bg-primary hover:bg-primary/90 text-white rounded-full p-4 shadow-2xl transition-all duration-300 hover:scale-110 flex items-center gap-2"
+        >
+          <Icon name="Phone" size={24} />
+          <span className="font-semibold">Обратный звонок</span>
+        </button>
+      </div>
 
       {/* Callback Form Modal */}
       {callbackOpen && (
