@@ -3,8 +3,11 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import Icon from '@/components/ui/icon';
 import { useToast } from '@/hooks/use-toast';
+import { portfolioData } from '@/data/portfolio';
+import { servicesData } from '@/data/services';
 
 export default function Index() {
   const { toast } = useToast();
@@ -187,144 +190,72 @@ export default function Index() {
       <section id="services" className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">Наши услуги</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="overflow-hidden hover:shadow-xl transition-shadow">
-              <img 
-                src="https://cdn.poehali.dev/projects/4db00bbb-6882-4830-aef3-0e461606456f/files/fb2512f2-ea32-4136-8284-d2307b0c14a6.jpg"
-                alt="Стандартные ворота"
-                className="w-full h-48 object-cover"
-              />
-              <CardHeader>
-                <CardTitle className="text-xl">Стандартные ворота</CardTitle>
-                <CardDescription>
-                  Классическое решение для гаража. Высокое качество по доступной цене.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-2 text-sm text-muted-foreground">
-                  <div className="flex items-center gap-2">
-                    <Icon name="Check" size={16} className="text-primary" />
-                    <span>Панели 40мм с утеплением</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Icon name="Check" size={16} className="text-primary" />
-                    <span>Ручное/автоматическое управление</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Icon name="Check" size={16} className="text-primary" />
-                    <span>Более 20 цветов на выбор</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden hover:shadow-xl transition-shadow">
-              <img 
-                src="https://cdn.poehali.dev/projects/4db00bbb-6882-4830-aef3-0e461606456f/files/4aed3680-b163-4f6a-a846-3e962c8961d8.jpg"
-                alt="Премиум ворота"
-                className="w-full h-48 object-cover"
-              />
-              <CardHeader>
-                <CardTitle className="text-xl">Премиум класс</CardTitle>
-                <CardDescription>
-                  Максимальная тепло- и шумоизоляция. Эксклюзивный дизайн.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-2 text-sm text-muted-foreground">
-                  <div className="flex items-center gap-2">
-                    <Icon name="Check" size={16} className="text-primary" />
-                    <span>Панели 45мм с пенополиуретаном</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Icon name="Check" size={16} className="text-primary" />
-                    <span>Бесшумный привод премиум-класса</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Icon name="Check" size={16} className="text-primary" />
-                    <span>Встроенная калитка</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden hover:shadow-xl transition-shadow">
-              <div className="w-full h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                <Icon name="Smartphone" size={64} className="text-primary" />
-              </div>
-              <CardHeader>
-                <CardTitle className="text-xl">Умные ворота</CardTitle>
-                <CardDescription>
-                  Инновационная автоматика с управлением через приложение.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-2 text-sm text-muted-foreground">
-                  <div className="flex items-center gap-2">
-                    <Icon name="Check" size={16} className="text-primary" />
-                    <span>Wi-Fi модуль и приложение</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Icon name="Check" size={16} className="text-primary" />
-                    <span>Датчики препятствий</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Icon name="Check" size={16} className="text-primary" />
-                    <span>Уведомления на смартфон</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+          <Carousel className="w-full max-w-5xl mx-auto" opts={{ align: "start", loop: true }}>
+            <CarouselContent>
+              {servicesData.map((service) => (
+                <CarouselItem key={service.id} className="md:basis-1/2 lg:basis-1/3">
+                  <Card className="overflow-hidden hover:shadow-xl transition-shadow h-full">
+                    {service.image ? (
+                      <img 
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-48 object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+                        <Icon name="Smartphone" size={64} className="text-primary" />
+                      </div>
+                    )}
+                    <CardHeader>
+                      <CardTitle className="text-xl">{service.title}</CardTitle>
+                      <CardDescription>{service.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-2 text-sm text-muted-foreground">
+                        {service.features.map((feature, idx) => (
+                          <div key={idx} className="flex items-center gap-2">
+                            <Icon name="Check" size={16} className="text-primary" />
+                            <span>{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
         </div>
       </section>
 
       <section id="portfolio" className="py-20 px-4">
         <div className="container mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">Наши работы</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
-              <img 
-                src="https://cdn.poehali.dev/files/804183d7-7c15-4cad-9727-1781c02180b9.png"
-                alt="Проект 1"
-                className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                <div className="text-white">
-                  <h3 className="text-xl font-bold mb-2">Современный дом</h3>
-                  <p className="text-sm">Белые секционные ворота с входной дверью</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
-              <img 
-                src="https://cdn.poehali.dev/files/31378883-e42b-4dd1-b6e4-ee24c65b98ef.jpg"
-                alt="Проект 2"
-                className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                <div className="text-white">
-                  <h3 className="text-xl font-bold mb-2">Городской дом</h3>
-                  <p className="text-sm">Графитовые секционные ворота с кирпичной отделкой</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
-              <img 
-                src="https://cdn.poehali.dev/files/631ca939-92b8-4efc-832c-ba3508934680.jpg"
-                alt="Проект 3"
-                className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                <div className="text-white">
-                  <h3 className="text-xl font-bold mb-2">Гараж с калиткой</h3>
-                  <p className="text-sm">Белые ворота с встроенной калиткой</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Carousel className="w-full max-w-5xl mx-auto" opts={{ align: "start", loop: true }}>
+            <CarouselContent>
+              {portfolioData.map((project) => (
+                <CarouselItem key={project.id} className="md:basis-1/2 lg:basis-1/3">
+                  <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <img 
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                      <div className="text-white">
+                        <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                        <p className="text-sm">{project.description}</p>
+                      </div>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
         </div>
       </section>
 
