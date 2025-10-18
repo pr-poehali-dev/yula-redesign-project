@@ -478,13 +478,13 @@ export default function Index() {
           <span className="font-semibold">Telegram</span>
         </a>
         
-        <button
-          onClick={() => setCallbackOpen(!callbackOpen)}
+        <a
+          href="tel:+79309531975"
           className="bg-primary hover:bg-primary/90 text-white rounded-full p-4 shadow-2xl transition-all duration-300 hover:scale-110 flex items-center gap-2"
         >
           <Icon name="Phone" size={24} />
-          <span className="font-semibold">Обратный звонок</span>
-        </button>
+          <span className="font-semibold">Позвонить</span>
+        </a>
       </div>
 
       {/* Callback Form Modal */}
