@@ -459,6 +459,16 @@ export default function Index() {
       {/* Floating Action Buttons */}
       <div className="fixed bottom-8 right-8 z-50 flex flex-col gap-4">
         <a
+          href="https://wa.me/79309531975"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-[#25D366] hover:bg-[#25D366]/90 text-white rounded-full p-4 shadow-2xl transition-all duration-300 hover:scale-110 flex items-center gap-2"
+        >
+          <Icon name="MessageCircle" size={24} />
+          <span className="font-semibold">WhatsApp</span>
+        </a>
+
+        <a
           href="https://t.me/ulaa_ru"
           target="_blank"
           rel="noopener noreferrer"
