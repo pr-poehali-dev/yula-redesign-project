@@ -259,6 +259,132 @@ export default function Index() {
         </div>
       </section>
 
+      <section className="py-20 px-4 bg-accent/5">
+        <div className="container mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">Отзывы наших клиентов</h2>
+          <p className="text-xl text-muted-foreground text-center mb-16 max-w-3xl mx-auto">
+            Более 1000 довольных клиентов по всей России
+          </p>
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="hover:shadow-xl transition-all duration-300">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="flex-shrink-0">
+                    <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center">
+                      <Icon name="User" className="text-primary" size={28} />
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg">Алексей Иванов</h3>
+                    <p className="text-sm text-muted-foreground">Частный клиент</p>
+                    <div className="flex gap-1 mt-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Icon key={i} name="Star" className="text-yellow-500 fill-yellow-500" size={16} />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <p className="text-muted-foreground mb-4">
+                  Отличная работа! Ребята установили секционные ворота за один день, как и обещали. Всё аккуратно, качественно. Автоматика работает отлично, управляю со смартфона. Очень доволен!
+                </p>
+                <img 
+                  src="https://cdn.poehali.dev/projects/4db00bbb-6882-4830-aef3-0e461606456f/files/f5284b93-6278-426a-ad91-91cb3c135117.jpg"
+                  alt="Установленные ворота"
+                  className="w-full h-64 object-cover rounded-xl"
+                />
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-xl transition-all duration-300">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="flex-shrink-0">
+                    <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center">
+                      <Icon name="Building2" className="text-primary" size={28} />
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg">ООО "ТехСклад"</h3>
+                    <p className="text-sm text-muted-foreground">Логистическая компания</p>
+                    <div className="flex gap-1 mt-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Icon key={i} name="Star" className="text-yellow-500 fill-yellow-500" size={16} />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <p className="text-muted-foreground mb-4">
+                  Заказывали промышленные ворота для нового склада. Установили 4 секции, всё сделали быстро и профессионально. Цена оказалась лучше, чем у конкурентов. Рекомендуем!
+                </p>
+                <img 
+                  src="https://cdn.poehali.dev/projects/4db00bbb-6882-4830-aef3-0e461606456f/files/5f6c6348-1cfe-41fc-8c61-429bc4624b81.jpg"
+                  alt="Промышленные ворота"
+                  className="w-full h-64 object-cover rounded-xl"
+                />
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-xl transition-all duration-300">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="flex-shrink-0">
+                    <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center">
+                      <Icon name="User" className="text-primary" size={28} />
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg">Мария Петрова</h3>
+                    <p className="text-sm text-muted-foreground">Частный клиент</p>
+                    <div className="flex gap-1 mt-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Icon key={i} name="Star" className="text-yellow-500 fill-yellow-500" size={16} />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <p className="text-muted-foreground mb-4">
+                  Заказывала ворота для загородного дома. Помогли выбрать цвет и дизайн, подобрали под фасад. Монтаж прошёл без проблем, мастера очень аккуратные. Спасибо за качество!
+                </p>
+                <img 
+                  src="https://cdn.poehali.dev/projects/4db00bbb-6882-4830-aef3-0e461606456f/files/53330b16-a4cb-4fad-8109-721a16c7c49f.jpg"
+                  alt="Ворота загородного дома"
+                  className="w-full h-64 object-cover rounded-xl"
+                />
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-xl transition-all duration-300">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="flex-shrink-0">
+                    <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center">
+                      <Icon name="Building2" className="text-primary" size={28} />
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg">АО "МоторЦентр"</h3>
+                    <p className="text-sm text-muted-foreground">Автосервис</p>
+                    <div className="flex gap-1 mt-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Icon key={i} name="Star" className="text-yellow-500 fill-yellow-500" size={16} />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <p className="text-muted-foreground mb-4">
+                  Установили секционные ворота в нашем автосервисе. Работают уже год без нареканий. Отличное соотношение цены и качества. При необходимости обратимся снова.
+                </p>
+                <img 
+                  src="https://cdn.poehali.dev/projects/4db00bbb-6882-4830-aef3-0e461606456f/files/d6611330-e4fd-4609-af92-b9f79e2d96c2.jpg"
+                  alt="Ворота автосервиса"
+                  className="w-full h-64 object-cover rounded-xl"
+                />
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       <section id="order" className="py-20 px-4 bg-gradient-to-br from-primary/10 via-background to-accent/10">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
