@@ -288,7 +288,7 @@ export default function Index() {
                   Отличная работа! Ребята установили секционные ворота за один день, как и обещали. Всё аккуратно, качественно. Автоматика работает отлично, управляю со смартфона. Очень доволен!
                 </p>
                 <img 
-                  src="https://cdn.poehali.dev/projects/4db00bbb-6882-4830-aef3-0e461606456f/files/f5284b93-6278-426a-ad91-91cb3c135117.jpg"
+                  src="https://cdn.poehali.dev/files/3886f2ef-e8c7-4dcf-9981-1f2958b33ec6.jpg"
                   alt="Установленные ворота"
                   className="w-full h-64 object-cover rounded-xl mx-0"
                 />
