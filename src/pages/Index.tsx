@@ -382,14 +382,49 @@ export default function Index() {
               </div>
             </div>
 
-            <div className="bg-muted/50 rounded-2xl p-8 flex items-center justify-center">
-              <div className="text-center">
-                <Icon name="MapPin" className="mx-auto text-primary mb-4" size={64} />
-                <p className="text-lg text-muted-foreground">
-                  Здесь будет интерактивная карта с нашим расположением
-                </p>
-              </div>
-            </div>
+            <Card className="border-2">
+              <CardHeader>
+                <CardTitle className="text-2xl">Реквизиты компании</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div>
+                  <p className="font-semibold text-base mb-1">Индивидуальный предприниматель</p>
+                  <p className="text-lg">Кощеева Лариса Владимировна</p>
+                </div>
+                
+                <div>
+                  <p className="font-semibold text-base mb-1">Юридический адрес</p>
+                  <p className="text-base">Российская Федерация, 108810, г. Москва,</p>
+                  <p className="text-base">Поселение Внуковское, Деревня Крёкшино,</p>
+                  <p className="text-base">ул. Фермерская д. 41</p>
+                </div>
+                
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <p className="font-semibold text-base mb-1">ИНН</p>
+                    <p className="text-base">772306460299</p>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-base mb-1">ОГРНИП</p>
+                    <p className="text-base">322774600627929</p>
+                  </div>
+                </div>
+                
+                <div>
+                  <p className="font-semibold text-base mb-1">Email</p>
+                  <a href="mailto:info@ulaa.ru" className="text-base text-primary hover:underline">
+                    info@ulaa.ru
+                  </a>
+                </div>
+                
+                <div>
+                  <p className="font-semibold text-base mb-1">Телефон</p>
+                  <a href="tel:+79309531975" className="text-base text-primary hover:underline">
+                    +7 (930) 953 1975
+                  </a>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
