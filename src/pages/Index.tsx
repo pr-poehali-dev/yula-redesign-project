@@ -270,42 +270,42 @@ export default function Index() {
           <div className="grid md:grid-cols-3 gap-6">
             <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
               <img 
-                src="https://cdn.poehali.dev/projects/4db00bbb-6882-4830-aef3-0e461606456f/files/8652919c-28a1-49a1-8815-4181c0a79902.jpg"
+                src="https://cdn.poehali.dev/files/804183d7-7c15-4cad-9727-1781c02180b9.png"
                 alt="Проект 1"
                 className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
                 <div className="text-white">
-                  <h3 className="text-xl font-bold mb-2">Коттеджный посёлок</h3>
-                  <p className="text-sm">Серые секционные ворота с остеклением</p>
+                  <h3 className="text-xl font-bold mb-2">Современный дом</h3>
+                  <p className="text-sm">Белые секционные ворота с входной дверью</p>
                 </div>
               </div>
             </div>
 
             <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
               <img 
-                src="https://cdn.poehali.dev/projects/4db00bbb-6882-4830-aef3-0e461606456f/files/fb2512f2-ea32-4136-8284-d2307b0c14a6.jpg"
+                src="https://cdn.poehali.dev/files/31378883-e42b-4dd1-b6e4-ee24c65b98ef.jpg"
                 alt="Проект 2"
                 className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
                 <div className="text-white">
-                  <h3 className="text-xl font-bold mb-2">Частный дом</h3>
-                  <p className="text-sm">Белые ворота премиум с панорамным остеклением</p>
+                  <h3 className="text-xl font-bold mb-2">Городской дом</h3>
+                  <p className="text-sm">Графитовые секционные ворота с кирпичной отделкой</p>
                 </div>
               </div>
             </div>
 
             <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
               <img 
-                src="https://cdn.poehali.dev/projects/4db00bbb-6882-4830-aef3-0e461606456f/files/4aed3680-b163-4f6a-a846-3e962c8961d8.jpg"
+                src="https://cdn.poehali.dev/files/631ca939-92b8-4efc-832c-ba3508934680.jpg"
                 alt="Проект 3"
                 className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
                 <div className="text-white">
-                  <h3 className="text-xl font-bold mb-2">Таунхаус</h3>
-                  <p className="text-sm">Чёрные ворота с автоматикой премиум-класса</p>
+                  <h3 className="text-xl font-bold mb-2">Гараж с калиткой</h3>
+                  <p className="text-sm">Белые ворота с встроенной калиткой</p>
                 </div>
               </div>
             </div>
