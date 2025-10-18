@@ -81,7 +81,7 @@ export default function Index() {
             <div className="relative animate-scale-in">
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-3xl"></div>
               <img 
-                src="https://cdn.poehali.dev/projects/4db00bbb-6882-4830-aef3-0e461606456f/files/8652919c-28a1-49a1-8815-4181c0a79902.jpg"
+                src="https://cdn.poehali.dev/files/a2633d0f-1b63-4337-9f10-ff163bb7c675.jpg"
                 alt="Современные секционные ворота"
                 className="relative rounded-3xl shadow-2xl w-full"
               />
