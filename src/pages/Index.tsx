@@ -409,20 +409,6 @@ export default function Index() {
                     <p className="text-base">322774600627929</p>
                   </div>
                 </div>
-                
-                <div>
-                  <p className="font-semibold text-base mb-1">Email</p>
-                  <a href="mailto:info@ulaa.ru" className="text-base text-primary hover:underline">
-                    info@ulaa.ru
-                  </a>
-                </div>
-                
-                <div>
-                  <p className="font-semibold text-base mb-1">Телефон</p>
-                  <a href="tel:+79309531975" className="text-base text-primary hover:underline">
-                    +7 (930) 953 1975
-                  </a>
-                </div>
               </CardContent>
             </Card>
           </div>
