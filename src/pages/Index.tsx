@@ -42,8 +42,11 @@ export default function Index() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <Icon name="Zap" className="text-primary" size={28} />
-              <span className="text-2xl font-bold text-secondary">Ulaa.ru</span>
+              <img 
+                src="https://cdn.poehali.dev/files/e57609fe-e0da-480f-be6e-de6475f0199b.png" 
+                alt="Ulaa" 
+                className="h-10 w-auto"
+              />
             </div>
             <nav className="hidden md:flex items-center gap-8">
               <button onClick={() => scrollToSection('services')} className="text-foreground hover:text-primary transition-colors">Услуги</button>
