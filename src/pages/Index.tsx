@@ -260,7 +260,7 @@ export default function Index() {
       </section>
 
       <section id="order" className="py-20 px-4 bg-gradient-to-br from-primary/10 via-background to-accent/10">
-        <div className="container mx-auto max-w-2xl">
+        <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Заказать бесплатный замер</h2>
             <p className="text-lg text-muted-foreground">
@@ -268,9 +268,10 @@ export default function Index() {
             </p>
           </div>
           
-          <Card className="shadow-xl">
-            <CardContent className="p-8">
-              <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <Card className="shadow-xl">
+              <CardContent className="p-8">
+                <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2">Ваше имя</label>
                   <Input
@@ -336,6 +337,15 @@ export default function Index() {
               </form>
             </CardContent>
           </Card>
+
+          <div className="hidden md:block">
+            <img 
+              src="https://cdn.poehali.dev/projects/4db00bbb-6882-4830-aef3-0e461606456f/files/82454260-e714-4788-931f-40e10db3eba5.jpg"
+              alt="Наш специалист"
+              className="rounded-3xl shadow-2xl w-full h-full object-cover"
+            />
+          </div>
+        </div>
         </div>
       </section>
 
