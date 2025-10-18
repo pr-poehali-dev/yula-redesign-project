@@ -14,6 +14,8 @@ export default function Index() {
     address: '',
     message: ''
   });
+  const [callbackOpen, setCallbackOpen] = useState(false);
+  const [callbackPhone, setCallbackPhone] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -34,6 +36,16 @@ export default function Index() {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleCallbackSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast({
+      title: "Заявка принята!",
+      description: "Мы перезвоним вам в течение 5 минут.",
+    });
+    setCallbackPhone('');
+    setCallbackOpen(false);
   };
 
   return (
@@ -491,6 +503,55 @@ export default function Index() {
           </div>
         </div>
       </footer>
+
+      {/* Floating Callback Button */}
+      <button
+        onClick={() => setCallbackOpen(!callbackOpen)}
+        className="fixed bottom-8 right-8 z-50 bg-primary hover:bg-primary/90 text-white rounded-full p-4 shadow-2xl transition-all duration-300 hover:scale-110 flex items-center gap-2"
+      >
+        <Icon name="Phone" size={24} />
+        <span className="font-semibold">Обратный звонок</span>
+      </button>
+
+      {/* Callback Form Modal */}
+      {callbackOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fade-in">
+          <Card className="w-full max-w-md shadow-2xl animate-scale-in">
+            <CardHeader>
+              <div className="flex items-center justify-between">
+                <CardTitle className="text-2xl">Обратный звонок</CardTitle>
+                <button
+                  onClick={() => setCallbackOpen(false)}
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <Icon name="X" size={24} />
+                </button>
+              </div>
+              <CardDescription>
+                Оставьте ваш номер телефона, и мы перезвоним вам в течение 5 минут
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <form onSubmit={handleCallbackSubmit} className="space-y-4">
+                <div>
+                  <Input
+                    type="tel"
+                    placeholder="+7 (999) 123-45-67"
+                    value={callbackPhone}
+                    onChange={(e) => setCallbackPhone(e.target.value)}
+                    required
+                    className="text-lg"
+                  />
+                </div>
+                <Button type="submit" size="lg" className="w-full text-lg">
+                  <Icon name="Phone" className="mr-2" size={20} />
+                  Перезвоните мне
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
+        </div>
+      )}
     </div>
   );
 }
