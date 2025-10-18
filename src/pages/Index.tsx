@@ -317,7 +317,7 @@ export default function Index() {
                   Заказывали промышленные ворота для нового склада. Установили 4 секции, всё сделали быстро и профессионально. Цена оказалась лучше, чем у конкурентов. Рекомендуем!
                 </p>
                 <img 
-                  src="https://cdn.poehali.dev/projects/4db00bbb-6882-4830-aef3-0e461606456f/files/5f6c6348-1cfe-41fc-8c61-429bc4624b81.jpg"
+                  src="https://cdn.poehali.dev/files/2d28e057-da38-411b-be1b-d4dbe2819fac.jpg"
                   alt="Промышленные ворота"
                   className="w-full h-64 object-cover rounded-xl"
                 />
