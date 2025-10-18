@@ -60,7 +60,7 @@ export default function Index() {
               <img 
                 src="https://cdn.poehali.dev/files/e57609fe-e0da-480f-be6e-de6475f0199b.png" 
                 alt="Ulaa" 
-                className="h-14 w-auto"
+                className="h-20 w-auto"
               />
             </div>
             <nav className="hidden md:flex items-center gap-8">
