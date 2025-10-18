@@ -404,8 +404,8 @@ export default function Index() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg mb-1">Телефон</h3>
-                  <a href="tel:+79991234567" className="text-xl text-primary hover:underline">
-                    +7 (999) 123-45-67
+                  <a href="tel:+79309531975" className="text-xl text-primary hover:underline">
+                    +7 (930) 953-19-75
                   </a>
                   <p className="text-sm text-muted-foreground mt-1">Ежедневно с 9:00 до 21:00</p>
                 </div>
