@@ -346,7 +346,7 @@ export default function Index() {
                   Заказывала ворота для загородного дома. Помогли выбрать цвет и дизайн, подобрали под фасад. Монтаж прошёл без проблем, мастера очень аккуратные. Спасибо за качество!
                 </p>
                 <img 
-                  src="https://cdn.poehali.dev/projects/4db00bbb-6882-4830-aef3-0e461606456f/files/53330b16-a4cb-4fad-8109-721a16c7c49f.jpg"
+                  src="https://cdn.poehali.dev/files/30eefe96-af41-4e35-a1eb-e9dea5431962.jpeg"
                   alt="Ворота загородного дома"
                   className="w-full h-64 object-cover rounded-xl"
                 />
