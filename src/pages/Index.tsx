@@ -19,6 +19,9 @@ export default function Index() {
   });
   const [callbackOpen, setCallbackOpen] = useState(false);
   const [callbackPhone, setCallbackPhone] = useState('');
+  const [cookieConsent, setCookieConsent] = useState(() => {
+    return localStorage.getItem('cookieConsent') === 'true';
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -49,6 +52,11 @@ export default function Index() {
     });
     setCallbackPhone('');
     setCallbackOpen(false);
+  };
+
+  const handleCookieConsent = () => {
+    localStorage.setItem('cookieConsent', 'true');
+    setCookieConsent(true);
   };
 
   return (
@@ -591,6 +599,25 @@ export default function Index() {
           </div>
         </div>
       </footer>
+
+      {/* Cookie Consent Banner */}
+      {!cookieConsent && (
+        <div className="fixed bottom-0 left-0 right-0 z-50 bg-card border-t-2 border-primary p-6 shadow-2xl animate-fade-in">
+          <div className="container mx-auto max-w-4xl">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              <div className="flex items-start gap-3">
+                <Icon name="Cookie" className="text-primary flex-shrink-0 mt-1" size={24} />
+                <p className="text-sm text-foreground">
+                  Мы используем cookies. Используя сайт, вы соглашаетесь с обработкой данных с целью сбора аналитики. Cookies можно отключить в любой момент в настройках вашего браузера.
+                </p>
+              </div>
+              <Button onClick={handleCookieConsent} size="lg" className="flex-shrink-0">
+                ОК
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Floating Action Buttons */}
       <div className="fixed bottom-8 right-8 z-50 flex flex-col gap-4">
