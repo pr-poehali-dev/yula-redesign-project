@@ -45,7 +45,7 @@ export default function Index() {
               <img 
                 src="https://cdn.poehali.dev/files/e57609fe-e0da-480f-be6e-de6475f0199b.png" 
                 alt="Ulaa" 
-                className="h-10 w-auto"
+                className="h-14 w-auto"
               />
             </div>
             <nav className="hidden md:flex items-center gap-8">
@@ -455,9 +455,12 @@ export default function Index() {
         <div className="container mx-auto">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <Icon name="Zap" size={24} />
-                <span className="text-xl font-bold">Ulaa.ru</span>
+              <div className="mb-4">
+                <img 
+                  src="https://cdn.poehali.dev/files/e57609fe-e0da-480f-be6e-de6475f0199b.png" 
+                  alt="Ulaa" 
+                  className="h-12 w-auto"
+                />
               </div>
               <p className="text-white/70">
                 Инновационные решения для установки секционных гаражных ворот
