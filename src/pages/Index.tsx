@@ -179,7 +179,7 @@ export default function Index() {
                 </div>
                 <CardTitle className="text-2xl">Опыт 10+ лет</CardTitle>
                 <CardDescription className="text-base">
-                  Более 1000 успешно выполненных проектов
+                  Более 2000 успешно реализованных проектов
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -187,60 +187,66 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="services" className="py-20 px-4 bg-accent/5">
+      <section id="services" className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">Наши услуги</h2>
-          <p className="text-xl text-muted-foreground text-center mb-16 max-w-3xl mx-auto">
-            Полный спектр услуг по установке, ремонту и обслуживанию секционных ворот
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {servicesData.map((service) => (
-              <Card key={service.id} className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-primary">
-                <CardHeader>
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <Icon name={service.icon as any} className="text-white" size={32} />
-                  </div>
-                  <CardTitle className="text-2xl">{service.title}</CardTitle>
-                  <CardDescription className="text-base">{service.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <Icon name="CheckCircle2" className="text-primary flex-shrink-0 mt-1" size={18} />
-                        <span className="text-sm text-muted-foreground">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">Наши услуги</h2>
+          <Carousel className="w-full max-w-5xl mx-auto" opts={{ align: "start", loop: true }}>
+            <CarouselContent>
+              {servicesData.map((service) => (
+                <CarouselItem key={service.id} className="md:basis-1/2 lg:basis-1/3">
+                  <Card className="overflow-hidden hover:shadow-xl transition-shadow h-full">
+                    {service.image ? (
+                      <img 
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-48 object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+                        <Icon name="Smartphone" size={64} className="text-primary" />
+                      </div>
+                    )}
+                    <CardHeader>
+                      <CardTitle className="text-xl">{service.title}</CardTitle>
+                      <CardDescription>{service.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-2 text-sm text-muted-foreground">
+                        {service.features.map((feature, idx) => (
+                          <div key={idx} className="flex items-center gap-2">
+                            <Icon name="Check" size={16} className="text-primary" />
+                            <span>{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
         </div>
       </section>
 
       <section id="portfolio" className="py-20 px-4">
         <div className="container mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">Наши работы</h2>
-          <p className="text-xl text-muted-foreground text-center mb-16 max-w-3xl mx-auto">
-            Более 1000 успешно завершенных проектов по всей России
-          </p>
-          <Carousel className="w-full max-w-5xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">Наши работы</h2>
+          <Carousel className="w-full max-w-5xl mx-auto" opts={{ align: "start", loop: true }}>
             <CarouselContent>
-              {portfolioData.map((item) => (
-                <CarouselItem key={item.id} className="md:basis-1/2 lg:basis-1/3">
-                  <div className="p-2">
-                    <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
-                      <img 
-                        src={item.image}
-                        alt={item.title}
-                        className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                          <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                          <p className="text-sm text-white/90">{item.description}</p>
-                        </div>
+              {portfolioData.map((project) => (
+                <CarouselItem key={project.id} className="md:basis-1/2 lg:basis-1/3">
+                  <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <img 
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                      <div className="text-white">
+                        <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                        <p className="text-sm">{project.description}</p>
                       </div>
                     </div>
                   </div>
@@ -253,105 +259,158 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="order" className="py-20 px-4 bg-gradient-to-br from-primary/5 to-accent/5">
-        <div className="container mx-auto max-w-4xl">
+      <section id="order" className="py-20 px-4 bg-gradient-to-br from-primary/10 via-background to-accent/10">
+        <div className="container mx-auto max-w-2xl">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Закажите бесплатный замер</h2>
-            <p className="text-xl text-muted-foreground">
-              Оставьте заявку, и наш специалист приедет в удобное для вас время
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Заказать бесплатный замер</h2>
+            <p className="text-lg text-muted-foreground">
+              Оставьте заявку, и наш специалист свяжется с вами в течение 15 минут
             </p>
           </div>
-          <form onSubmit={handleSubmit} className="space-y-6 bg-card p-8 rounded-3xl shadow-xl border-2">
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <label className="text-sm font-medium">Ваше имя *</label>
-                <Input 
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="Иван Иванов" 
-                  required 
-                  className="h-12"
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="text-sm font-medium">Телефон *</label>
-                <Input 
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  type="tel" 
-                  placeholder="+7 (999) 123-45-67" 
-                  required 
-                  className="h-12"
-                />
-              </div>
-            </div>
-            <div className="space-y-2">
-              <label className="text-sm font-medium">Адрес объекта *</label>
-              <Input 
-                name="address"
-                value={formData.address}
-                onChange={handleChange}
-                placeholder="г. Москва, ул. Примерная, д. 1" 
-                required 
-                className="h-12"
-              />
-            </div>
-            <div className="space-y-2">
-              <label className="text-sm font-medium">Комментарий</label>
-              <Textarea 
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="Расскажите о ваших пожеланиях..." 
-                className="min-h-32"
-              />
-            </div>
-            <Button type="submit" size="lg" className="w-full text-lg h-14">
-              <Icon name="Send" className="mr-2" size={20} />
-              Отправить заявку
-            </Button>
-            <p className="text-sm text-muted-foreground text-center">
-              Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
-            </p>
-          </form>
+          
+          <Card className="shadow-xl">
+            <CardContent className="p-8">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium mb-2">Ваше имя</label>
+                  <Input
+                    id="name"
+                    name="name"
+                    type="text"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Иван Иванов"
+                    className="h-12"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium mb-2">Телефон</label>
+                  <Input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    required
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="+7 (999) 123-45-67"
+                    className="h-12"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="address" className="block text-sm font-medium mb-2">Адрес объекта</label>
+                  <Input
+                    id="address"
+                    name="address"
+                    type="text"
+                    required
+                    value={formData.address}
+                    onChange={handleChange}
+                    placeholder="г. Москва, ул. Примерная, д. 1"
+                    className="h-12"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium mb-2">Комментарий (необязательно)</label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Укажите желаемое время замера или другие пожелания"
+                    rows={4}
+                  />
+                </div>
+
+                <Button type="submit" size="lg" className="w-full text-lg h-14">
+                  <Icon name="Send" className="mr-2" size={20} />
+                  Отправить заявку
+                </Button>
+
+                <p className="text-sm text-center text-muted-foreground">
+                  Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
+                </p>
+              </form>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
-      <section id="contacts" className="py-20 px-4 bg-accent/5">
+      <section id="contacts" className="py-20 px-4">
         <div className="container mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">Контакты</h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="bg-card p-8 rounded-2xl shadow-lg border-2 hover:border-primary transition-all text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Icon name="Phone" className="text-primary" size={28} />
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="space-y-8">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Icon name="Phone" className="text-primary" size={24} />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg mb-1">Телефон</h3>
+                  <a href="tel:+79309531975" className="text-xl text-primary hover:underline">
+                    +7 (930) 953-19-75
+                  </a>
+                  <p className="text-sm text-muted-foreground mt-1">Ежедневно с 9:00 до 21:00</p>
+                </div>
               </div>
-              <h3 className="font-semibold text-xl mb-3">Телефон</h3>
-              <a href="tel:+79999999999" className="text-lg text-primary hover:underline">
-                +7 (999) 999-99-99
-              </a>
-            </div>
-            
-            <div className="bg-card p-8 rounded-2xl shadow-lg border-2 hover:border-primary transition-all text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Icon name="Mail" className="text-primary" size={28} />
+
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Icon name="Mail" className="text-primary" size={24} />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg mb-1">Email</h3>
+                  <a href="mailto:info@ulaa.ru" className="text-xl text-primary hover:underline">
+                    info@ulaa.ru
+                  </a>
+                  <p className="text-sm text-muted-foreground mt-1">Ответим в течение часа</p>
+                </div>
               </div>
-              <h3 className="font-semibold text-xl mb-3">Email</h3>
-              <a href="mailto:info@ulaa.ru" className="text-lg text-primary hover:underline">
-                info@ulaa.ru
-              </a>
-            </div>
-            
-            <div className="bg-card p-8 rounded-2xl shadow-lg border-2 hover:border-primary transition-all text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Icon name="MapPin" className="text-primary" size={28} />
+
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Icon name="MapPin" className="text-primary" size={24} />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg mb-1">Адрес</h3>
+                  <p className="text-lg">г. Москва, ул. Фермерская, д. 41</p>
+                  <p className="text-sm text-muted-foreground mt-1">Почтовый адрес</p>
+                </div>
               </div>
-              <h3 className="font-semibold text-xl mb-3">Адрес</h3>
-              <p className="text-lg text-muted-foreground">
-                г. Москва, ул. Примерная, 1
-              </p>
             </div>
+
+            <Card className="border-2">
+              <CardHeader>
+                <CardTitle className="text-2xl">Реквизиты компании</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div>
+                  <p className="font-semibold text-base mb-1">Индивидуальный предприниматель</p>
+                  <p className="text-lg">Кощеева Лариса Владимировна</p>
+                </div>
+                
+                <div>
+                  <p className="font-semibold text-base mb-1">Юридический адрес</p>
+                  <p className="text-base">Российская Федерация, 108810, г. Москва,</p>
+                  <p className="text-base">Поселение Внуковское, Деревня Крёкшино,</p>
+                  <p className="text-base">ул. Фермерская д. 41</p>
+                </div>
+                
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <p className="font-semibold text-base mb-1">ИНН</p>
+                    <p className="text-base">772306460299</p>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-base mb-1">ОГРНИП</p>
+                    <p className="text-base">322774600627929</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -414,39 +473,47 @@ export default function Index() {
           className="bg-primary hover:bg-primary/90 text-white rounded-full p-4 shadow-2xl transition-all duration-300 hover:scale-110 flex items-center gap-2"
         >
           <Icon name="Phone" size={24} />
-          <span className="font-semibold">Перезвоните мне</span>
+          <span className="font-semibold">Обратный звонок</span>
         </button>
       </div>
 
-      {/* Callback Modal */}
+      {/* Callback Form Modal */}
       {callbackOpen && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-card rounded-3xl shadow-2xl max-w-md w-full p-8 relative animate-scale-in">
-            <button
-              onClick={() => setCallbackOpen(false)}
-              className="absolute top-4 right-4 text-muted-foreground hover:text-foreground"
-            >
-              <Icon name="X" size={24} />
-            </button>
-            
-            <h3 className="text-2xl font-bold mb-2">Обратный звонок</h3>
-            <p className="text-muted-foreground mb-6">Оставьте номер телефона, мы перезвоним в течение 5 минут</p>
-            
-            <form onSubmit={handleCallbackSubmit} className="space-y-4">
-              <Input
-                type="tel"
-                placeholder="+7 (999) 123-45-67"
-                value={callbackPhone}
-                onChange={(e) => setCallbackPhone(e.target.value)}
-                required
-                className="h-12"
-              />
-              <Button type="submit" size="lg" className="w-full">
-                <Icon name="Phone" className="mr-2" size={20} />
-                Жду звонка
-              </Button>
-            </form>
-          </div>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fade-in">
+          <Card className="w-full max-w-md shadow-2xl animate-scale-in">
+            <CardHeader>
+              <div className="flex items-center justify-between">
+                <CardTitle className="text-2xl">Обратный звонок</CardTitle>
+                <button
+                  onClick={() => setCallbackOpen(false)}
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <Icon name="X" size={24} />
+                </button>
+              </div>
+              <CardDescription>
+                Оставьте ваш номер телефона, и мы перезвоним вам в течение 5 минут
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <form onSubmit={handleCallbackSubmit} className="space-y-4">
+                <div>
+                  <Input
+                    type="tel"
+                    placeholder="+7 (999) 123-45-67"
+                    value={callbackPhone}
+                    onChange={(e) => setCallbackPhone(e.target.value)}
+                    required
+                    className="text-lg"
+                  />
+                </div>
+                <Button type="submit" size="lg" className="w-full text-lg">
+                  <Icon name="Phone" className="mr-2" size={20} />
+                  Перезвоните мне
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
         </div>
       )}
     </div>
