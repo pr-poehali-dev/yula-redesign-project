@@ -290,7 +290,7 @@ export default function Index() {
                 <img 
                   src="https://cdn.poehali.dev/projects/4db00bbb-6882-4830-aef3-0e461606456f/files/f5284b93-6278-426a-ad91-91cb3c135117.jpg"
                   alt="Установленные ворота"
-                  className="w-full h-64 object-cover rounded-xl"
+                  className="w-full h-64 object-cover rounded-xl mx-0"
                 />
               </CardContent>
             </Card>
