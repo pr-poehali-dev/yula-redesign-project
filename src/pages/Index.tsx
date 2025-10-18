@@ -160,11 +160,11 @@ export default function Index() {
             <Card className="border-2 hover:border-primary transition-all duration-300 hover:shadow-lg">
               <CardHeader>
                 <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-4">
-                  <Icon name="Thermometer" className="text-primary" size={28} />
+                  <Icon name="Headphones" className="text-primary" size={28} />
                 </div>
-                <CardTitle className="text-2xl">Теплоизоляция</CardTitle>
+                <CardTitle className="text-2xl">Бесплатная консультация</CardTitle>
                 <CardDescription className="text-base">
-                  Энергоэффективные ворота с утеплением до 45мм
+                  Поможем выбрать оптимальное решение для вашего гаража
                 </CardDescription>
               </CardHeader>
             </Card>
