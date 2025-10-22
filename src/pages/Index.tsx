@@ -162,7 +162,7 @@ export default function Index() {
                 <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-4">
                   <Icon name="DollarSign" className="text-primary" size={28} />
                 </div>
-                <CardTitle className="text-2xl">Прозрачные цены</CardTitle>
+                <CardTitle className="text-2xl">Гарантия лучшей цены от производителя</CardTitle>
                 <CardDescription className="text-base">Благодаря многолетнему сотрудничеству с поставщиками, предлагаем лучшую цену на ворота и автоматик</CardDescription>
               </CardHeader>
             </Card>
