@@ -182,9 +182,7 @@ export default function Index() {
                   <Icon name="Award" className="text-primary" size={28} />
                 </div>
                 <CardTitle className="text-2xl">Опыт 10+ лет</CardTitle>
-                <CardDescription className="text-base">
-                  Более 2000 успешно реализованных проектов
-                </CardDescription>
+                <CardDescription className="text-base">Качество, проверенное временем. Рольставни и ворота с безупречной работы</CardDescription>
               </CardHeader>
             </Card>
           </div>
