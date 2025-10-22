@@ -208,7 +208,7 @@ export default function Index() {
                       <img 
                         src={service.image}
                         alt={service.title}
-                        className="w-full h-48 object-cover"
+                        className="w-full h-48 object-cover my-0"
                       />
                     ) : (
                       <div className="w-full h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
