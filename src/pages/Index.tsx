@@ -127,9 +127,8 @@ export default function Index() {
                   <Icon name="Shield" className="text-primary" size={28} />
                 </div>
                 <CardTitle className="text-2xl">Гарантийный ремонт</CardTitle>
-                <CardDescription className="text-base">
-                  Официальная гарантия на все виды работ и материалы
-                </CardDescription>
+                <CardDescription className="text-base">Мы осуществляем 100% контроль качества
+нашей продукции на всех этапах</CardDescription>
               </CardHeader>
             </Card>
 
