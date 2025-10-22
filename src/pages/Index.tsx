@@ -126,7 +126,7 @@ export default function Index() {
                 <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-4">
                   <Icon name="Shield" className="text-primary" size={28} />
                 </div>
-                <CardTitle className="text-2xl">Гарантийный ремонт</CardTitle>
+                <CardTitle className="text-2xl">Качество</CardTitle>
                 <CardDescription className="text-base">Мы осуществляем 100% контроль качества
 нашей продукции на всех этапах</CardDescription>
               </CardHeader>
