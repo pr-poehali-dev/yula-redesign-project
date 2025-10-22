@@ -163,9 +163,7 @@ export default function Index() {
                   <Icon name="DollarSign" className="text-primary" size={28} />
                 </div>
                 <CardTitle className="text-2xl">Прозрачные цены</CardTitle>
-                <CardDescription className="text-base">
-                  Фиксированная стоимость без скрытых платежей
-                </CardDescription>
+                <CardDescription className="text-base">Благодаря многолетнему сотрудничеству с поставщиками, предлагаем лучшую цену на ворота и автоматик</CardDescription>
               </CardHeader>
             </Card>
 
