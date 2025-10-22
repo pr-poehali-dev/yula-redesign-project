@@ -172,7 +172,7 @@ export default function Index() {
                 <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-4">
                   <Icon name="Headphones" className="text-primary" size={28} />
                 </div>
-                <CardTitle className="text-2xl">Бесплатная консультация</CardTitle>
+                <CardTitle className="text-2xl">Ремонт и обслуживание</CardTitle>
                 <CardDescription className="text-base">
                   Поможем выбрать оптимальное решение для вашего гаража
                 </CardDescription>
