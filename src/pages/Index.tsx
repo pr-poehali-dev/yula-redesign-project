@@ -173,9 +173,7 @@ export default function Index() {
                   <Icon name="Headphones" className="text-primary" size={28} />
                 </div>
                 <CardTitle className="text-2xl">Ремонт и обслуживание</CardTitle>
-                <CardDescription className="text-base">
-                  Поможем выбрать оптимальное решение для вашего гаража
-                </CardDescription>
+                <CardDescription className="text-base">Профессиональный ремонт секционных ворот любых производителей</CardDescription>
               </CardHeader>
             </Card>
 
